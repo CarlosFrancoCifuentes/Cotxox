@@ -26,9 +26,24 @@ public class CarreraTest {
     }
 
     @Test
-    public void setOrigen(){
+    public void setOrigenTest(){
         String origen = "Plaza España";
         carrera.setOrigen(origen);
         assertEquals(origen, carrera.getOrigen()); 
+    }
+
+    @Test
+    public void setDestinoTest(){
+        String destino = "Plaza España";
+        carrera.setDestino(destino);
+        assertEquals(destino, carrera.getDestino()); 
+    }
+
+    @Test
+    public void setDistanciaTest(){
+        double distancia = 9.0;
+        double delta = 0.001;
+        carrera.setDistancia(distancia);
+        assertEquals(distancia, carrera.getDistancia(), delta); 
     }
 }
