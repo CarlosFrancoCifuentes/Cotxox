@@ -87,4 +87,12 @@ public class CarreraTest {
         carrera.asignarConductor(conductores);
         assert (carrera.getConductor() != null); 
     }
+
+    @Test
+    public void realizarPagoTest(){
+        double pago = 25.0;
+        double delta = 0.001;
+        carrera.realizarPago(pago);
+        assertEquals(pago, carrera.getCosteTotal(), delta); 
+    }
 }
