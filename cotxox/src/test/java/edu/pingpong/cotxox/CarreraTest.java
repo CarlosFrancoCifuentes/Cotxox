@@ -2,11 +2,15 @@ package edu.pingpong.cotxox;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import edu.pingpong.cotxox.domain.Carrera;
 import edu.pingpong.cotxox.domain.Conductor;
+import edu.pingpong.cotxox.domain.PoolConductores;
 
 public class CarreraTest {
 
@@ -59,16 +63,28 @@ public class CarreraTest {
     }
 
     @Test
-    public void setTiempoEsperado(){
+    public void setTiempoEsperadoTest(){
         int tiempoEsperado = 15;
         carrera.setTiempoEsperado(tiempoEsperado);
         assertEquals(tiempoEsperado, carrera.getTiempoEsperado()); 
     }
 
     @Test
-    public void setConductor(){
+    public void setConductorTest(){
         Conductor conductor = new Conductor("Carlos");
         carrera.setConductor(conductor);
         assertEquals(conductor, carrera.getConductor()); 
+    }
+
+    @Test
+    public void asignarConductorTest(){
+        carrera.setConductor(null);
+        String nombre = "Carlos";
+        Conductor conductor = new Conductor(nombre);
+        List<Conductor> poolConductores = new ArrayList<Conductor>();
+        poolConductores.add(conductor);
+        PoolConductores conductores = new PoolConductores(poolConductores);
+        carrera.asignarConductor(conductores);
+        assert (carrera.getConductor() != null); 
     }
 }
