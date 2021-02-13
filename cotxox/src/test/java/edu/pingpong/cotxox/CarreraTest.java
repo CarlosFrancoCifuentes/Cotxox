@@ -110,4 +110,11 @@ public class CarreraTest {
         carrera.liberarConductor();
         assert (!carrera.getConductor().isOcupado());
     }
+
+    @Test
+    public void setTiempoCarreraTest(){
+        int tiempoCarrera = 10;
+        carrera.setTiempoCarrera(tiempoCarrera);
+        assertEquals(tiempoCarrera, carrera.getTiempoCarrera()); 
+    }
 }
