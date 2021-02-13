@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import edu.pingpong.cotxox.domain.Carrera;
+import edu.pingpong.cotxox.domain.Conductor;
 
 public class CarreraTest {
 
@@ -62,5 +63,12 @@ public class CarreraTest {
         int tiempoEsperado = 15;
         carrera.setTiempoEsperado(tiempoEsperado);
         assertEquals(tiempoEsperado, carrera.getTiempoEsperado()); 
+    }
+
+    @Test
+    public void setConductor(){
+        Conductor conductor = new Conductor("Carlos");
+        carrera.setConductor(conductor);
+        assertEquals(conductor, carrera.getConductor()); 
     }
 }
