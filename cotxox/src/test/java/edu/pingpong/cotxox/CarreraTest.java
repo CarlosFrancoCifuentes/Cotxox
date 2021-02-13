@@ -95,4 +95,19 @@ public class CarreraTest {
         carrera.realizarPago(pago);
         assertEquals(pago, carrera.getCosteTotal(), delta); 
     }
+
+    @Test
+    public void recibirPropinaTest(){
+        int propina = 5;
+        carrera.recibirPropina(propina);
+        assertEquals(propina, carrera.getPropina()); 
+    }
+
+    @Test
+    public void liberarConductorTest(){
+        Conductor conductor = new Conductor("Carlos");
+        carrera.setConductor(conductor);
+        carrera.liberarConductor();
+        assert (!carrera.getConductor().isOcupado());
+    }
 }
