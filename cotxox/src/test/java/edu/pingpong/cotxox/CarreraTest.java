@@ -46,4 +46,14 @@ public class CarreraTest {
         carrera.setDistancia(distancia);
         assertEquals(distancia, carrera.getDistancia(), delta); 
     }
+
+    @Test
+    public void getCosteEsperadoTest(){
+        int tiempoEsperado = 15;
+        double distancia = 9.0;
+        double delta = 0.001;
+        carrera.setDistancia(distancia);
+        carrera.setTiempoEsperado(tiempoEsperado);
+        assertEquals(distancia * 1.35 + tiempoEsperado * 0.35, carrera.getCosteEsperado(), delta);
+    }
 }
